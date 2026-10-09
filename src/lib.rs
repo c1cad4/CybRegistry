@@ -72,7 +72,10 @@ mod tests {
     fn prevents_duplicate_id() {
         let mut registry = Registry::default();
         registry.register(agent("a")).unwrap();
-        assert_eq!(registry.register(agent("a")), Err(RegistryError::DuplicateId));
+        assert_eq!(
+            registry.register(agent("a")),
+            Err(RegistryError::DuplicateId)
+        );
     }
 
     #[test]
